@@ -1,0 +1,18 @@
+[package]
+name = "accelerator"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+arduino_nano_connect = {workspace = true, features = ["boot2", "rt", "critical-section-impl", "rom-func-cache"]}
+cortex-m-rt.workspace = true
+panic-halt.workspace = true
+cortex-m.workspace = true
+usb_serial.workspace = true
+usb-device.workspace = true
+heapless.workspace = true
+lsm6dsox = "1.0.1"
+accelerometer = "0.12.0"
+

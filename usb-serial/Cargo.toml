@@ -1,0 +1,14 @@
+[package]
+name = "usb_serial"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+arduino_nano_connect = {workspace = true, features = ["boot2", "rt", "critical-section-impl", "rom-func-cache"]}
+cortex-m-rt.workspace = true
+panic-halt.workspace = true
+cortex-m.workspace = true
+usb-device.workspace = true
+usbd-hid.workspace = true
+usbd-serial.workspace = true
+heapless.workspace = true

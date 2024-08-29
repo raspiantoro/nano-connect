@@ -1,0 +1,21 @@
+[workspace] 
+members = [ 
+    "accelerator",
+    "blink", 
+    "gyroscope", 
+    "uart", 
+    "usb-serial",
+] 
+
+[workspace.dependencies]
+arduino_nano_connect = {version = "0.7.0", features = ["boot2", "rt", "critical-section-impl", "rom-func-cache"]}
+embedded-hal = "1.0.0"
+panic-halt = "0.2.0"
+cortex-m-rt = "0.7.3"
+cortex-m = "0.7.7"
+rp2040-boot2 = { version = "0.3" }
+usb-device = "0.3.2"
+usbd-hid = "0.8.2"
+usbd-serial = "0.2.2"
+usb_serial ={ path = "./usb-serial"}
+heapless = "0.8.0"

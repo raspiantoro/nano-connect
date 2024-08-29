@@ -1,0 +1,14 @@
+[package]
+name = "blink"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+arduino_nano_connect = {workspace = true, features = ["boot2", "rt", "critical-section-impl", "rom-func-cache"]}
+cortex-m.workspace = true
+cortex-m-rt.workspace = true
+embedded-hal.workspace = true
+panic-halt.workspace = true
+rp2040-boot2.workspace = true
