@@ -8,10 +8,6 @@ use bsp::hal::prelude::*;
 use bsp::hal::pac;
 use bsp::hal;
 
-// #[link_section = ".boot_loader"]
-// #[used]
-// pub static BOOT_LOADER: [u8; 256] = rp2040_boot2::BOOT_LOADER_W25Q080;
-
 #[arduino_nano_connect::entry]
 fn main () -> ! {
     let mut pac = pac::Peripherals::take().unwrap();

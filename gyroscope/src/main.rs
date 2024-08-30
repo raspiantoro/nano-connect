@@ -52,7 +52,7 @@ fn main () -> ! {
         )
     );
 
-    let mut serial = usb_serial::UsbSerialBuilder::new(&usb_bus, UsbVidPid(0x16c0, 0x27dd)).build().unwrap();
+    let mut serial = usb_serial::UsbSerialBuilder::new(&usb_bus).build().unwrap();
 
     let sda_pin: Pin<_, FunctionI2C, _> = pins.gpio12.reconfigure();
     let scl_pin: Pin<_, FunctionI2C, _> = pins.gpio13.reconfigure();

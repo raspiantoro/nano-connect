@@ -6,6 +6,7 @@ use arduino_nano_connect as bsp;
 use bsp::pac;
 use bsp::hal;
 use usb_device::bus::UsbBusAllocator;
+use usb_device::device::StringDescriptors;
 use usb_device::device::UsbVidPid;
 
 #[arduino_nano_connect::entry]
@@ -45,7 +46,14 @@ fn main () -> ! {
         )
     );
 
-    let mut serial = usb_serial::UsbSerialBuilder::new(&usb_bus, UsbVidPid(0x16c0, 0x27dd)).build().unwrap();
+    let mut serial = usb_serial::UsbSerialBuilder::new(&usb_bus)
+        .strings(&[StringDescriptors::default()
+            .manufacturer("Fake Company ii")])
+        .unwrap()
+        .vid_pid(UsbVidPid(0x16c0, 0x27dd))
+        .device_class(2)
+        .build()
+        .unwrap();
     
     serial.port.write(b"USB Serial Echo Server\r\n").unwrap();
 
